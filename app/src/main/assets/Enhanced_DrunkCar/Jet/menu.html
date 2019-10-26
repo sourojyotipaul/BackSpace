@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-1.12.4.min.js"></script>
+    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cc073073ef354001904881a&product=email-list-builder' async='async'>
+    </script>
+    <script type="text/javascript">
+        if(localStorage.highscore < 0){
+            localStorage.setItem("controls",0);
+            localStorage.setItem("gMusic",1);
+        }
+        
+        $(document).ready(function(){
+            if(localStorage.controls == 0){
+                var x = document.getElementById("singleTap");
+                x.checked = "true";
+            }
+            else{
+                var x = document.getElementById("doubleTap");
+                x.checked = "true";
+            }
+
+        });
+
+    </script>
+    <link href="style.css" rel="stylesheet" /> </head>
+    <style>
+	html, body {
+		font-family: Arial, Helvetica, sans-serif;
+		background: #f9fd50;
+		height: 100%;
+		margin: 0px;
+	}
+
+
+	/* The Modal (background) */
+	.modal {
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    padding-top: 100px; /* Location of the box */
+	    left: 0;
+	    top: 0;
+	    width: 100%; /* Full width */
+	    height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgb(0,0,0); /* Fallback color */
+	    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+
+	/* Modal Content */
+	.modal-content {
+	    background-color: #fefefe;
+	    margin: auto;
+	    padding: 20px;
+	    border: 1px solid #888;
+	    width: 80%;
+	}
+
+	/* The Close Button */
+	.close {
+	    color: #aaaaaa;
+	    float: right;
+	    font-size: 28px;
+	    font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+	    color: #000;
+	    text-decoration: none;
+	    cursor: pointer;
+	}
+
+
+	.w3-tangerine {
+  		font-family: 'Tangerine', serif;
+	}
+
+	</style>
+<!--Inside options menu begin-->
+<style>
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 5px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 20%;
+    background: white;
+}
+</style>
+<!--Inside options menu-->
+</head>
+<body>
+
+<center>
+<div>
+<div style="height: 22%; background-color: #444444">
+    <table cellspacing="0"; cellpadding="18" style="text-align: center;">
+        <tr><CENTER>
+        <td><h1 style="color: white" fclass="w3-tangerine"> BackSpace </h1></td>
+        </tr></CENTER>
+    </table>
+</div>
+<div style="height: 25%; background-color: #f30067; padding: 1%">
+    <table cellspacing="0"; cellpadding="18" style="text-align: center;">
+        <tr><CENTER>
+        <td style="color: white; border-style: solid; border-radius: 50px;">
+        	<h3>Highscore : <script>
+                    document.write(""+localStorage.highscore);
+                    </script>
+                    <br>
+    		</h3>
+        </td>
+        </tr></CENTER>
+    </table>
+    <br>
+    <h2 style="color: white; text-transform: uppercase;">
+    <script>
+    	if(localStorage.p_count == 1){
+        	document.write(""+localStorage.p_name);
+    	}
+    	else{
+        	document.write("Player Name");
+    	}   
+    </script>
+    </h2>
+</div>
+<div style="height: 22%; background-color: #38e8ff">
+    <table cellspacing="0"; cellpadding="18" style="text-align: center;">
+        <tr><CENTER>
+        <td>
+        	<!--<a href="file:///android_asset/Enhanced_DrunkCar/Jet/game.html" style="color: white">-->
+    		<button style=" background-color: transparent; border: none; height: 20%" onclick="loadGame()">
+    		<img src="play.gif" style="height: 100%; width: 80%">
+    		</button>
+    		<!--</a>-->
+        </td>
+        </tr></CENTER>
+    </table>
+</div>
+<div style="height: 22%; background-color: #f9fd50">
+    <table cellspacing="0"; cellpadding="14" style="text-align: center;">
+        <tr><CENTER>
+        <td>
+        	<button id="info" style="background-color: transparent;border: none;">
+                    <h1 style="color: white">{ OPTIONS }</h1>
+                </button>
+        </td>
+        </tr></CENTER>
+    </table>
+</div>
+<audio id="my_audio" controls autoplay loop hidden="true">
+  <source src="menu.mp4" type="audio/mpeg">
+</audio>
+
+<script type="text/javascript">
+	window.onload = function() {
+    document.getElementById("my_audio").play();
+}
+</script>
+</center>
+</div>
+
+
+<!-- The Modal -->
+<div id="infoModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <CENTER>
+        <div style="background-color: #444444">
+        	<br>
+        	<h2 style="color: white">OPTIONS</h2>
+        	<form method="post" action="">
+                    <h1 style="color: white">
+                    	<input type="text" name="pname" id="pname" placeholder="Player Name" required="true" style="background-color: transparent;border: dotted; height: 50px; width: 250px; text-align: center;" maxlength="20">
+                    
+                    </h1>
+                    <button style="background-color: green;border: dotted; height: 50px; width: 200px; text-align: center; color: white; border-radius: 15px" onclick="setPlayerName()">Done</button>
+                </form>
+        	<br>
+        	<h2 style="color: white">
+								GAME MUSIC :	<label class="switch">
+  												<input type="checkbox" id="gMusic" checked>
+  												<span class="slider round"></span>
+												</label>
+			</h2>
+            <h2 style="color: white">
+                                Controls :
+            </h2>
+            <div style="width: 200px">
+                    <label id="singleTap" class="container" onclick="singleTap()">Single Tap
+                        <input type="radio" name="radio" onclick="singleTap()">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label id="doubleTap" class="container" onclick="doubleTap()">Double Tap
+                      <input type="radio" name="radio" onclick="doubleTap()">
+                      <span class="checkmark"></span>
+                    </label>
+            </div>
+		<br>
+        </div>
+		<div>
+		
+			<h3>---THANK YOU---</h2>
+			<h5>If you like the game, spread the word</h3>
+
+        </CENTER>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('infoModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("info");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+    $(document).ready(function(){
+        $("#gMusic").click(function(){
+            if($(this).prop("checked") == true){
+                localStorage.setItem("gMusic",1);
+            }
+            else if($(this).prop("checked") == false){
+                localStorage.setItem("gMusic",0);
+            }
+        });
+    });
+
+
+    $(document).ready(function(){
+    if(localStorage.gMusic == 1){
+        $("#gMusic").prop("checked", true);
+    }
+    else{
+        $("#gMusic").prop("checked", false);
+    }
+
+});
+</script>
+
+<script>
+function setPlayerName() {
+	var name = document.getElementById("pname").value
+  	alert("Hello! " + name);
+  	localStorage.setItem("p_name",name);
+  	localStorage.setItem("p_count",1);
+}
+
+    $(document).ready(function(){
+        $("#singleTap").click(function(){
+            if($(this).prop("checked") == true){
+                localStorage.setItem("controls",0);
+            }
+             else if($(this).prop("checked") == false){
+                localStorage.setItem("controls",1);
+            }
+        });
+    });
+
+    $(document).ready(function(){
+        $("#doubleTap").click(function(){
+            if($(this).prop("checked") == true){
+                localStorage.setItem("controls",1);
+            }
+            else if($(this).prop("checked") == false){
+                localStorage.setItem("controls",0);
+            }
+        });
+    });
+
+
+    $(document).ready(function(){
+    if(localStorage.controls == 0){
+        $("#singleTap").prop("checked", true);
+    }
+    else{
+        $("#doubleTap").prop("checked", true);
+    }
+
+});
+
+function loadGame(){
+    if(localStorage.controls == 0)
+        window.location.assign("singleTap.html");
+    else if(localStorage.controls == 1){
+        window.location.assign("doubleTap.html");
+    }
+}
+
+function singleTap(){
+    localStorage.setItem("controls",0);
+}
+
+function doubleTap(){
+    localStorage.setItem("controls",1);
+}
+
+</script>
+
+</body>
+</html>

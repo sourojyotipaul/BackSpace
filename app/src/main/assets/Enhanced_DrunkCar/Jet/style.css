@@ -1,0 +1,314 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #061f3e;
+    font-family: sans-serif;
+}
+
+#container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    margin-top: 2px;;
+    background-image: url("bg4.jpg");                                                                                                                                                                                                                       
+    overflow: hidden;
+}
+#line_1{
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    left: 60%;
+    position: relative;
+    text-align: center;
+}
+.sideline_l{
+    position: absolute;
+    height: 100%;
+    width: 1%;
+    margin-left: 0%;
+    background-color: rgba(255,255,255,0.5);
+}
+.sideline_r{
+    position: absolute;
+    height: 100%;
+    width: 1%;
+    margin-left: 99%;
+    background-color: rgba(255,255,255,0.5);
+}
+/*change line CSS to planets*/
+
+#line_1{
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    text-align: center;
+}
+
+#line_1:before, #line_1:after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    height: 20px;
+    width: 20px;
+    background: transparent;
+}
+
+
+#line_2{
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    text-align: center;
+}
+
+#line_3{
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    text-align: center;
+}
+
+#line_l{
+    top: 0px;
+}
+#line_r{
+    top: 0px;
+}
+.car{
+    position: absolute;
+    height: 10px;
+    width: 05px;
+    border-radius: 1px;
+    box-shadow: 0px 1px 0px 0px black;
+}
+
+
+#car_1{
+    top: -100px;
+    left: 60%;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border-color: transparent;
+    border-style: solid;
+}
+#car_2{
+    top: -200px;
+    left: 40%;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid transparent;
+}
+
+#car_3{
+    top: -350px;
+    left: 50%;
+    height: 25px;
+    width: 25px;
+    background: transparent;
+    border-radius: 50%;
+}
+
+#car_5{
+    top: -450px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid transparent;
+}
+
+
+#restart_div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    color: white;
+    font-family: sans-serif;
+    font-size: 40px;
+    text-align: center;
+    display: none;
+}
+
+#restart {
+    border: none;
+    padding: 25px;
+    color: white;
+    background: linear-gradient(to bottom, #ff6699 0%, #ffff00 126%);
+    font-size: 30px;
+    margin-top: 25%;
+}
+.small_text{
+    font-size: 15px;
+}
+#score_div{
+    text-align: center;
+    position: top;
+    margin-top: 0%;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-size: 22px;
+    background-color: white;
+    color: #454545;
+    padding: 0px;
+    box-shadow: 2px 2px 0px 1px #808080;
+}
+#help{
+	text-align: center;
+}
+#donate{
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    background: rgba(255,255,255,0.8);
+    padding: 12px;
+}
+
+#leftB{
+    border: none;
+    color: transparent;
+    background-color: transparent;
+    font-size: 30px;
+    margin-top: -8vh;
+    height: 101vh;
+}
+
+#rightB{
+    border: none;
+    color: transparent;
+    background-color: transparent;
+    font-size: 30px;
+    margin-top: -8vh;
+    height: 101vh;
+}
+
+#menu2{
+    float: left;
+    position: relative;
+    margin-left: -74%;
+}
+
+#menu{
+    float: left;
+    position: relative;
+    margin-top: 0%;
+    margin-left: -75%;
+    font-size: 18px;
+    background-color: transparent;
+    color: #454545;
+    padding: 0px;
+}
+
+#car_4 { 
+    position: relative; width: 25px;
+    border-width: 20px 10px 0;
+    border-style: solid;
+    border-color: transparent;
+} 
+
+#car_4:before { 
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -40px;
+    left: -12px;
+    border-width: 0 24px 20px;
+    border-style: solid;
+    border-color: transparent transparent transparent;
+}
+
+/*SHIP DESIGN CHANGE BLOCK*/
+/*CSS TAG FOR THE SHIP IS CAR
+TO MAKE CHANGES DO NOT FORGET TO COMMENT THE "CAR" TAG ABOVE*/
+#car {
+    bottom: 8%;
+    left: 60%;
+    background: transparent;
+    display: inline-block;
+    height: 15px;
+    margin-left: 1px;
+    margin-top: 10px;
+    width: 30px;
+}
+#car:before {
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    content: ""; 
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: -15px;
+    width: 0;
+}
+
+/*options mod*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: green;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

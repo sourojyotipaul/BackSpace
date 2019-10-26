@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DoubleTap</title>
+    <link href="style.css" rel="stylesheet" /> </head>
+
+<body onload="music()">
+<!--<div id="help">
+    <p>Controls: Right, Left, Up & Down arrow keys.</p>
+</div>-->
+<audio id="audi" controls loop="true" hidden="true">
+    <source src="file:///android_asset/Enhanced_DrunkCar/Jet/play.mp3" type="audio/ogg">
+    <source src="file:///android_asset/Enhanced_DrunkCar/play.mp3" type="audio/mpeg">
+</audio>
+
+<div id="score_div">
+    <div id="menu">
+        <a href="file:///android_asset/Enhanced_DrunkCar/Jet/menu.html"><button style="height:22px; background-color: transparent; border: none"><img src="file:///android_asset/Enhanced_DrunkCar/Jet/back.png" style="height: 22px"></button></a>
+    </div>
+    Score: <span id="score">0</span>
+</div>
+
+<div id="container">
+    <div id="line_1" class="line">
+        <img src="meteorLarge.png" style="top:0px;left:0px;height:30px;width:30px;position: absolute;-moz-transform: rotate(-45deg);transform: rotate(-45deg);">
+    </div>
+    <div id="line_2" class="line">
+        <img src="meteorLarge.png" style="top:0px;left:0px;height:50px;width:50px;position: absolute;-moz-transform: rotate(-45deg);transform: rotate(-45deg);">
+    </div>
+    <div id="line_3" class="line">
+        <img src="meteorLarge.png" style="top:0px;left:0px;height:30px;width:30px;position: absolute;-moz-transform: rotate(-45deg);transform: rotate(-45deg);">
+    </div>
+    <div id="line_l" class="sideline_l"></div>
+    <div id="line_r" class="sideline_r"></div>
+    <div id="car" class="car">
+    <p id="inst" style="color: white; z-index: 1;width: 310px; margin-left: -190px; text-align: center;"><b>Tap anywhere to change direction</b></p>
+        <div class="f_glass"></div>
+        <div class="b_glass"></div>
+        <div class="f_light_l"></div>
+        <div class="f_light_r"></div>
+        <div class="f_tyre_l"></div>
+        <div class="f_tyre_r"></div>
+        <div class="b_tyre_l"></div>
+        <div class="b_tyre_r"></div>
+        <img src="player.png" style="position: absolute; bottom: 8%; left: -20px; display: inline-block; height: 45px; margin-left: 1px; margin-top: 10px;
+            width: 70px;">
+    </div>
+
+    <!--Commenting the game elements
+    <div id="car_1" class="car">
+        <div class="f_glass"></div>
+        <div class="b_glass"></div>
+        <div class="f_light_l"></div>
+        <div class="f_light_r"></div>
+        <div class="f_tyre_l"></div>
+        <div class="f_tyre_r"></div>
+        <div class="b_tyre_l"></div>
+        <div class="b_tyre_r"></div>
+        <img src="rock.png" style="top: -5px;left: -25px;height: 100px;width: 100px; position: absolute;">
+    </div>
+    <div id="car_2" class="car">
+        <div class="f_glass"></div>
+        <div class="b_glass"></div>
+        <div class="f_light_l"></div>
+        <div class="f_light_r"></div>
+        <div class="f_tyre_l"></div>
+        <div class="f_tyre_r"></div>
+        <div class="b_tyre_l"></div>
+        <div class="b_tyre_r"></div>
+        <img src="spaceship.png" style="top: -30px;left: -20px;width: 45px; height: 40px; position: absolute;">
+    </div>
+    <div id="car_3" class="car">
+        <div class="f_glass"></div>
+        <div class="b_glass"></div>
+        <div class="f_light_l"></div>
+        <div class="f_light_r"></div>
+        <div class="f_tyre_l"></div>
+        <div class="f_tyre_r"></div>
+        <div class="b_tyre_l"></div>
+        <div class="b_tyre_r"></div>
+        <img src="planet.png" style="top: -25px;left: -35px;height: 100px;width: 100px; position: absolute;">
+    </div>
+    <div id="car_4" class="car">
+        <div class="f_glass"></div>
+        <div class="b_glass"></div>
+        <div class="f_light_l"></div>
+        <div class="f_light_r"></div>
+        <div class="f_tyre_l"></div>
+        <div class="f_tyre_r"></div>
+        <div class="b_tyre_l"></div>
+        <div class="b_tyre_r"></div>
+        <img src="satellite.png" style="top: -40px;left: -25px;height: 60px;width: 60px; position: absolute;">
+    </div>
+    <div id="car_5" class="car">
+        <div class="f_glass"></div>
+        <div class="b_glass"></div>
+        <div class="f_light_l"></div>
+        <div class="f_light_r"></div>
+        <div class="f_tyre_l"></div>
+        <div class="f_tyre_r"></div>
+        <div class="b_tyre_l"></div>
+        <div class="b_tyre_r"></div>
+        <img src="rock2.png" style="top: 0px;left: -13px;height: 100px;width: 100px; position: absolute;">
+    </div>
+    <!-<div id="car_6" class="car">
+        <div class="f_glass"></div>
+        <div class="b_glass"></div>
+        <div class="f_light_l"></div>
+        <div class="f_light_r"></div>
+        <div class="f_tyre_l"></div>
+        <div class="f_tyre_r"></div>
+        <div class="b_tyre_l"></div>
+        <div class="b_tyre_r"></div>
+    </div> End of Comment-->
+    <div id="restart_div">
+        <button id="restart">
+            Restart<br>
+            <small class="small_text">(tap to restart)</small>
+        </button>
+    </div>
+
+    <center>
+        <div>
+            <button id="leftB" onclick="goleft()" style="width: 45%; padding : 1%; ">left</button>
+            <button id="rightB" onclick="goright()" style="width: 45%; padding : 1%; ">right</button>
+        </div>
+    </center>
+</div>
+
+<script type="text/javascript">
+/*		var Dir_var = "1";
+		function checkDir(){
+
+        var x = document.getElementById("inst");
+        x.style.display = "none";
+			
+            if(Dir_var=="1"){
+                    goright();
+                	Dir_var = "2";
+                }
+            else if(Dir_var=="2"){
+            		goleft();
+            		Dir_var = "1";
+            	}
+
+		}
+*/
+        function goleft(){
+        	var x = document.getElementById("inst");
+        	x.style.display = "none";
+
+        	if(localStorage.gMusic == 1){
+                audi.play();
+            }
+                var u = jQuery.Event("keyup", { keyCode: 39 });
+                jQuery("body").trigger( u );
+                var e = jQuery.Event("keydown", { keyCode: 37 });
+                jQuery("body").trigger( e );
+
+        }
+
+        function goright(){
+        	var x = document.getElementById("inst");
+        	x.style.display = "none";
+
+        	if(localStorage.gMusic == 1){
+                audi.play();
+            }
+                var u = jQuery.Event("keyup", { keyCode: 37 });
+                jQuery("body").trigger( u );
+                var e = jQuery.Event("keydown", { keyCode: 39 });
+                jQuery("body").trigger( e );
+        }
+    </script>
+<!--<div id="donate">
+    <p>Link to the tutorial: <a target="_blank" href="https://goo.gl/RNFT7F">https://goo.gl/RNFT7F</a></p>
+    <p>Want to buy me a coffee? <br>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="XW2U9PJMKD464">
+            <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </p>
+</div>-->
+
+
+<script src="jquery.min.js"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    function music() {
+    audi.play();
+}
+</script>
+</body>
+
+</html>
